@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>uw_depth_ros</name>
+  <version>0.0.1</version>
+  <description>The uw_depth_ros package</description>
+
+  <maintainer email="eriktfr@stud.ntnu.no">Erik Tjærand Frøland</maintainer>
+  <license>MIT</license>
+
+  <!-- Build dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>  
+
+
+  <!-- Execution dependencies -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+  <!-- Optional dependencies -->
+  <!-- <exec_depend>uw_depth_ros</exec_depend> -->
+
+</package>

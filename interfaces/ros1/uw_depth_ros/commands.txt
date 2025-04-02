@@ -1,0 +1,7 @@
+----- run node -----
+rosrun uw_depth_ros uw_depth_node.py
+
+----- Visualize image -----
+sudo apt-get install ros-noetic-rqt-image-view
+rqt_image_view
+
