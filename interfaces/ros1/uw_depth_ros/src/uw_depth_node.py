@@ -89,14 +89,23 @@ class UWDepthNode:
 
             rospy.loginfo(f"Inference Time: {(end_time - start_time):.4f} sec")
 
-            # Remove batch dimension
-            heatmap = prediction[0].squeeze(0).cpu().numpy()
+            # # Remove batch dimension
+            # heatmap = prediction[0].squeeze(0).cpu().numpy()
 
-            # Convert the heatmap to a color image (hot color map)
-            colored_heatmap = cv2.applyColorMap((heatmap * 255).astype(np.uint8), cv2.COLORMAP_HOT)
+            # # Convert the heatmap to a color image (hot color map)
+            # colored_heatmap = cv2.applyColorMap((heatmap * 255).astype(np.uint8), cv2.COLORMAP_HOT)
 
-            # Convert to a ROS image message (appropriate encoding for color images)
-            depth_msg = self.bridge.cv2_to_imgmsg(colored_heatmap, encoding="bgr8")
+            # # Convert to a ROS image message (appropriate encoding for color images)
+            # depth_msg = self.bridge.cv2_to_imgmsg(colored_heatmap, encoding="bgr8")
+
+            # Get the raw depth prediction (depth in centimeters)
+            depth_map_cm = prediction[0].squeeze(0).cpu().numpy()  # Depth map as a 2D numpy array in centimeters
+
+            # Option 1: Convert depth to millimeters and use 16-bit unsigned integer
+            depth_map_mm = (depth_map_cm * 10).astype(np.uint16)  # Convert cm to mm
+
+            # Convert to ROS message (using 16-bit unsigned integer encoding for millimeters)
+            depth_msg = self.bridge.cv2_to_imgmsg(depth_map_mm, encoding="16UC1")
 
             # Publish result
             self.depth_pub.publish(depth_msg)
