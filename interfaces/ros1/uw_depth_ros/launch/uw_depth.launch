@@ -1,0 +1,7 @@
+<launch>
+    <!-- Load parameters from YAML -->
+    <rosparam file="$(find uw_depth_ros)/config/uw_depth.yaml" command="load"/>
+
+    <!-- Launch the uw-depth node -->
+    <node name="UWDepthNode" pkg="uw_depth_ros" type="uw_depth_node.py" output="screen"/>
+</launch>

@@ -1,0 +1,11 @@
+# Topics
+sub_image_topic: "/camera/image_topic"
+sub_prior_topic: "/prior_topic"
+depth_topic: "/uw_depth/depth_image"
+heatmap_topic: "/uw_depth/heatmap"
+combined_topic: "/uw_depth/combined_image"
+
+# Flags and limits
+use_priors: true
+max_priors: 300
+

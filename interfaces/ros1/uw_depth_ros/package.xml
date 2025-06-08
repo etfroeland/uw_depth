@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>The uw_depth_ros package</description>
 
-  <maintainer email="eriktfr@stud.ntnu.no">Erik Tjærand Frøland</maintainer>
+  <maintainer email="etfroeland@gmail.com">Erik Tjærand Frøland</maintainer>
   <license>MIT</license>
 
   <!-- Build dependencies -->
@@ -20,8 +20,5 @@
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
-
-  <!-- Optional dependencies -->
-  <!-- <exec_depend>uw_depth_ros</exec_depend> -->
 
 </package>
