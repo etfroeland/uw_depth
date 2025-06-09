@@ -11,7 +11,6 @@ from cv_bridge import CvBridge
 from torchvision.transforms import ToTensor
 import sys
 import os
-from PIL import Image as PILImage
 
 # Get the parent directory four levels up
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..'))
