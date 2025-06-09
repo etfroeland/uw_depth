@@ -64,8 +64,6 @@ class UWDepthNode:
         rospy.loginfo("Received image and point cloud messages.")
         
         try:
-            total_time = time.time()
-
             # Convert ROS image to OpenCV format
             cv_rgb = self.bridge.imgmsg_to_cv2(image_msg, desired_encoding="bgr8")
 
